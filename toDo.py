@@ -1,12 +1,19 @@
 array = []
 
 def addTask(task):
-    task = print("enter a task to add")
+    task = input("enter a task to add: \n" )
     array.append(task) 
     print(f"task '{task}' added to list")
 
+
+def addTask():
+    task = input("Enter a task to add: \n")
+    array.append(task)
+    print(f"Task '{task}' added to list")
+
+
 def removeTask(task):
-    task = print("enter a number for a task to remove")
+    task = input("enter a number for a task to remove: \n")
     if task >= 0 and task < len(array):
         array.remove(task)
         print(f"task '{task}' removed from list")
@@ -16,14 +23,15 @@ def removeTask(task):
 def printTasks():
     print(array)
 
-def updatetask(task, task2):
-    task = print("enter a number for a task to update")
+def updatetask():
+    task = int(input("enter a number for a task to update: \n"))
     if task >= 0 and task < len(array):
-        task2 = input("enter a new task")
+        task2 = input("enter a new task: ")
         array[task] = task2
         print(f"task '{task}' updated to '{task2}'")
     else:
         print("task not found")
+
 
 def main():
     while True:
@@ -32,7 +40,7 @@ def main():
         print("3. Print tasks")
         print("4. Update a task")
         print("5. Exit")
-        choice = int(input("Enter your choice: "))
+        choice = int(input("Enter your choice: \n"))
         if choice == 1:
             addTask()
         elif choice == 2:
@@ -42,6 +50,7 @@ def main():
         elif choice == 4:
             updatetask()
         elif choice == 5:
+            print("thanks for interacting with the program 🤝")
             break
         else:
             print("Invalid choice")
